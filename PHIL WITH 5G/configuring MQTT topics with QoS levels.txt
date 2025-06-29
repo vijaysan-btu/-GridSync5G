@@ -1,0 +1,81 @@
+
+mqtt:
+  broker: "172.16.11.10"
+  port: 1883
+  topics:
+    phil/grid/frequency/reference:
+      ros_topic: "/ros2mqtt/grid/frequency/reference"
+      qos: 2
+    phil/grid/frequency/measured:
+      ros_topic: "/ros2mqtt/grid/frequency/measured"
+      qos: 2
+    phil/grid/voltage/phase1:
+      ros_topic: "/ros2mqtt/grid/voltage/phase1"
+      qos: 1
+    phil/supercap/mode:
+      ros_topic: "/ros2mqtt/supercap/mode"
+      qos: 0
+    phil/supercap/voltage/phase1:
+      ros_topic: "/ros2mqtt/supercap/voltage/phase1"
+      qos: 1
+    phil/battery/mode:
+      ros_topic: "/ros2mqtt/battery/mode"
+      qos: 0
+    phil/battery/voltage/phase1:
+      ros_topic: "/ros2mqtt/battery/voltage/phase1"
+      qos: 1
+    phil/battery/power/active:
+      ros_topic: "/ros2mqtt/battery/power/active"
+      qos: 1
+    phil/fuelcell/mode:
+      ros_topic: "/ros2mqtt/fuelcell/mode"
+      qos: 0
+    phil/fuelcell/voltage/phase1:
+      ros_topic: "/ros2mqtt/fuelcell/voltage/phase1"
+      qos: 1
+    phil/fuelcell/power/active:
+      ros_topic: "/ros2mqtt/fuelcell/power/active"
+      qos: 1
+    phil/component/status:
+      ros_topic: "/ros2mqtt/component/status"
+      qos: 2
+    phil/component/logs:
+      ros_topic: "/ros2mqtt/component/logs"
+      qos: 0
+    phil/alert/grid_failure:
+      ros_topic: "/ros2mqtt/alert/grid_failure"
+      qos: 2
+    phil/connectivity/status:
+      ros_topic: "/ros2mqtt/connectivity/status"
+      qos: 0
+# Code below does not work until we login each ip with the module name like 
+#'ssh user@172.16.11.10 "chmod 700 ~/.ssh; chmod 600 ~/.ssh/authorized_keys'
+#Need to define each ip adresses with specific authorized keys to make the command smaller
+#We can also simplify the ip to module name nad type ssh module name
+udp:
+  port: 7000
+  modules:
+    grid:
+      source_ip: "172.16.11.10"
+      destination_ips:
+        - "172.16.11.11"
+        - "172.16.11.12"
+        - "172.16.11.13"
+    supercapacitor:
+      source_ip: "172.16.11.11"
+      destination_ips:
+        - "172.16.11.10"
+        - "172.16.11.12"
+        - "172.16.11.13"
+    battery:
+      source_ip: "172.16.11.12"
+      destination_ips:
+        - "172.16.11.10"
+        - "172.16.11.11"
+        - "172.16.11.13"
+    fuelcell:
+      source_ip: "172.16.11.13"
+      destination_ips:
+        - "172.16.11.10"
+        - "172.16.11.11"
+        - "172.16.11.12" 

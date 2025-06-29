@@ -1,0 +1,73 @@
+udp:
+  port: 7000
+  modules:
+    grid:
+      source_ip: "192.168.6.21"
+      destination_ips:
+        - "192.168.6.20"  # fuelcell
+        - "192.168.6.22"  # supercapacitor
+        - "192.168.6.23"  # battery
+    supercapacitor:
+      source_ip: "192.168.6.22"
+      destination_ips:
+        - "192.168.6.21"  # grid
+        - "192.168.6.20"  # fuelcell
+        - "192.168.6.23"  # battery
+    battery:
+      source_ip: "192.168.6.23"
+      destination_ips:
+        - "192.168.6.21"  # grid
+        - "192.168.6.20"  # fuelcell
+        - "192.168.6.22"  # supercapacitor
+    fuelcell:
+      source_ip: "192.168.6.20"
+      destination_ips:
+        - "192.168.6.21"  # grid
+        - "192.168.6.22"  # supercapacitor
+        - "192.168.6.23"  # battery
+mqtt:
+  broker: "192.168.6.21"
+  port: 1883
+  topics:
+    phil/grid/frequency/measured:
+      ros_topic: "/ros2mqtt/grid/frequency/measured"
+      qos: 2
+    phil/grid/voltage/phase1:
+      ros_topic: "/ros2mqtt/grid/voltage/phase1"
+      qos: 1
+    phil/supercapacitor/mode:
+      ros_topic: "/ros2mqtt/supercapacitor/mode"
+      qos: 0
+    phil/supercapacitor/voltage/phase1:
+      ros_topic: "/ros2mqtt/supercapacitor/voltage/phase1"
+      qos: 1
+    phil/battery/mode:
+      ros_topic: "/ros2mqtt/battery/mode"
+      qos: 0
+    phil/battery/voltage/phase1:
+      ros_topic: "/ros2mqtt/battery/voltage/phase1"
+      qos: 1
+    phil/battery/power/active:
+      ros_topic: "/ros2mqtt/battery/power/active"
+      qos: 1
+    phil/fuelcell/mode:
+      ros_topic: "/ros2mqtt/fuelcell/mode"
+      qos: 0
+    phil/fuelcell/voltage/phase1:
+      ros_topic: "/ros2mqtt/fuelcell/voltage/phase1"
+      qos: 1
+    phil/fuelcell/power/active:
+      ros_topic: "/ros2mqtt/fuelcell/power/active"
+      qos: 1
+    phil/component/status:
+      ros_topic: "/ros2mqtt/component/status"
+      qos: 2
+    phil/component/logs:
+      ros_topic: "/ros2mqtt/component/logs"
+      qos: 0
+    phil/alert/grid_failure:
+      ros_topic: "/ros2mqtt/alert/grid_failure"
+      qos: 2
+    phil/connectivity/status:
+      ros_topic: "/ros2mqtt/connectivity/status"
+      qos: 0

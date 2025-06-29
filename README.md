@@ -1,4 +1,3 @@
-# -GridSync5G
 # GridSync5G – Real-Time Grid Frequency Control via 5G
 
 **GridSync5G** is a Power-Hardware-in-the-Loop (PHIL) project focused on real-time grid frequency regulation using 5G communication networks, integrated with renewable energy sources.

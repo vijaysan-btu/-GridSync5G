@@ -25,5 +25,7 @@
 - Compared wired vs. 5G performance in renewable energy control
 
 ## 👨‍💻 Author
-Santhosh Kumar VM  
+1.Santhosh Kumar VM  
 [LinkedIn](https://www.linkedin.com/in/santhosh-vm-24ba681b2)
+2.Lubna Basha Mohammed
+[LinkedIn](https://www.linkedin.com/in/lubna-basha-mohammed-48297626a/)

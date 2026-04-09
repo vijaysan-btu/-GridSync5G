@@ -108,8 +108,8 @@ This hybrid pipeline combines the speed of UDP with the flexibility of MQTT.
 
 ## Author
 
-* Santhosh Kumar VM
-* Lubna Basha Mohammed
+* Santhosh Kumar Vijayalakshmi Murugan (https://www.linkedin.com/in/santhosh-vm-24ba681b2/)
+* Lubna Basha Mohammed (https://www.linkedin.com/in/lubna-basha-mohammed-48297626a/)
 
 ## Summary
 
